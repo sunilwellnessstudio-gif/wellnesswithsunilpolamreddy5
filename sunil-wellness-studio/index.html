@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunil Wellness Studio - It's OK to Seek Help</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* All the CSS styles from the previous code */
+        :root {
+            --primary: #2c786c;
+            --secondary: #ff9a3c;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --accent: #004445;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            margin-left: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 68, 69, 0.8), rgba(44, 120, 108, 0.8)), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e88a2a;
+            transform: translateY(-3px);
+        }
+        
+        /* Gratitude Section */
+        .gratitude {
+            background-color: var(--light);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .gratitude-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .gratitude h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .gratitude-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .experience-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            font-size: 2rem;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .certificate-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .certificate-img {
+            height: 350px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+        
+        .certificate-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+        
+        .certificate-card:hover .certificate-img img {
+            transform: scale(1.05);
+        }
+        
+        .certificate-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .certificate-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* NLP Section */
+        .nlp-section {
+            background-color: white;
+        }
+        
+        .nlp-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .nlp-content h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .nlp-components {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .nlp-component {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nlp-component h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--accent);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            margin-right: 30px;
+        }
+        
+        .footer-column:last-child {
+            margin-right: 0;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .hours-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        /* Modal for certificate images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 2%;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-column {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .certificate-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I%20would%20like%20to%20know%20more%20about%20your%20wellness%20services" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">
+                    <img id="logo-image" src="images/Sunil Logo.jpeg" alt="Sunil Wellness Studio Logo">
+                </div>
+                <div class="logo-text">
+                    <h1>SUNIL WELLNESS STUDIO</h1>
+                    <p class="tagline">It's OK to Seek Help</p>
+                </div>
+            </div>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#nlp">What is NLP</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Transform Your Life with NLP</h2>
+            <p>Discover your true potential and overcome limitations with personalized coaching from Sunil PolamReddy, an experienced NLP practitioner and wellness coach.</p>
+            <a href="#contact" class="btn">Book a 30 mins Free Discovery Call</a>
+        </div>
+    </section>
+
+    <!-- Gratitude Section -->
+    <section class="gratitude">
+        <div class="container">
+            <div class="gratitude-content">
+                <h3>My Deep Gratitude</h3>
+                <div class="gratitude-text">
+                    <p>My Heartful Gratitude to my Family, parents, Siblings, friends, relatives, My Colleagues, Employers, My beloved Gurus,</p>
+                    <p>Finally Not but the least, THE UNIVERSE.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Your Coach and Mentor</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/sunil image.jpg" alt="Sunil PolamReddy">
+                </div>
+                <div class="about-text">
+                    <h3>Sunil PolamReddy</h3>
+                    <div class="experience-badge">28 Years of Experience</div>
+                    <p>With 28 years of experience as a business professional and a Diploma in NLP from IAPCCT, Sunil PolamReddy expertly blends practical business knowledge with wellness techniques. A member of the International Coaching Federation (ICF), he specializes in using NLP to help clients break free from emotional patterns, overcome limitations, and manage stress.</p>
+                    <p>His personalized and empathetic coaching is results-oriented, focusing on empowering clients to achieve their personal and professional goals and live more fulfilling lives.</p>
+                    <p>Sunil has successfully helped numerous clients overcome emotional blocks, achieve career growth, improve relationships, and find greater purpose in their lives. His unique approach combines traditional wisdom with modern techniques to create lasting transformation.</p>
+                    <a href="#contact" class="btn">Connect With Sunil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NLP Section -->
+    <section class="nlp-section" id="nlp">
+        <div class="container">
+            <div class="section-title">
+                <h2>What is NLP?</h2>
+            </div>
+            
+            <div class="nlp-content">
+                <p>Neuro-Linguistic Programming (NLP) is a psychological approach that involves analyzing strategies used by successful individuals and applying them to reach personal goals. It relates thoughts, language, and patterns of behavior learned through experience to specific outcomes.</p>
+                
+                <p>NLP provides practical ways to change the way you think, view past events, and approach your life. It is a powerful tool for personal development and communication that can help you achieve success in all areas of life.</p>
+                
+                <h3>Core Components of NLP</h3>
+                
+                <div class="nlp-components">
+                    <div class="nlp-component">
+                        <h4>Neuro</h4>
+                        <p>The neurological processes that govern how we process information through our five senses. Understanding how the mind and body work together to create our experience of reality.</p>
+                    </div>
+                    
+                    <div class="nlp-component">
+                        <h4>Linguistic</h4>
+                        <p>The language and communication patterns we use to organize our thoughts and behavior. How we use words to influence ourselves and others.</p>
+                    </div>
+                    
+                    <div class="nlp-component">
+                        <h4>Programming</h4>
+                        <p>The behavioral patterns and habits we create through repetition. Learning to reprogram these patterns to achieve desired outcomes and behaviors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Services Offered</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Working Professional 1-1 Session</h3>
+                        <p>Specialized coaching for working professionals to enhance performance, improve work-life balance, and advance career goals through targeted strategies. Develop leadership skills, communication effectiveness, and career advancement strategies.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20Working%20Professional%201-1%20Session" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Stress Management</h3>
+                        <p>Learn effective techniques to manage and reduce stress, improve resilience, and maintain mental well-being in challenging situations. Develop sustainable practices for long-term mental and emotional health.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20Stress%20Management%20coaching" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Anxiety Management</h3>
+                        <p>Develop greater self-awareness, emotional regulation, and interpersonal skills to improve relationships and decision-making capabilities. Learn to navigate complex emotional landscapes with confidence and clarity.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20Anxiety%20Management%20coaching" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Fear Management</h3>
+                        <p>Conquer your fears and phobias through proven techniques that help you understand and overcome the root causes of fear. Build confidence and courage to face challenging situations.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20Fear%20Management%20coaching" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Goal Setting & Achievement</h3>
+                        <p>Create actionable plans and develop the mindset needed to set meaningful goals and consistently achieve them. Master the art of turning aspirations into tangible results through systematic approaches.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20Goal%20Setting%20%26%20Achievement%20coaching" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Living for a Purpose</h3>
+                        <p>Discover your life's purpose and align your actions with your core values. Create a meaningful life that brings fulfillment and satisfaction in all areas.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20Living%20for%20a%20Purpose%20coaching" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>NLP Adv Coaching</h3>
+                        <p>Utilize advanced Neuro-Linguistic Programming techniques to reprogram your mind for success, overcome limiting beliefs, and create lasting behavioral changes. Learn powerful techniques to transform your thought patterns and achieve personal breakthroughs.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20NLP%20Adv%20Coaching" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>NLP Training</h3>
+                        <p>Comprehensive NLP training programs designed to equip you with powerful techniques for personal and professional transformation. Learn from an experienced practitioner.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20NLP%20Training" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>NLP Monitoring</h3>
+                        <p>Ongoing support and monitoring to ensure the long-term success of your NLP journey. Regular check-ins and adjustments to maintain progress and achieve lasting results.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20NLP%20Monitoring" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Overcoming</h3>
+                        <p>Identify and transform self-sabotaging beliefs that hold you back from achieving your true potential in personal and professional life. Break through mental barriers and unlock your full capabilities through proven techniques.</p>
+                        <a href="https://wa.me/917330679417?text=Hi%20Sunil,%20I'm%20interested%20in%20Overcoming%20coaching" class="btn" style="margin-top: 15px;">Book a 30 mins Free Discovery Call</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img id="icf-certificate" src="images/icf certificate.jpg" alt="ICF Member Certificate" onclick="openModal(this)">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>ICF Member</h3>
+                        <p>International Coaching Federation Professional Coaches</p>
+                    </div>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img id="nlp-certificate" src="images/adv nlp certificate.jpg" alt="NLP Advanced Practitioner Certificate" onclick="openModal(this)">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>NLP Advanced Practitioner</h3>
+                        <p>Certified NLP Practitioner with advanced training</p>
+                    </div>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img id="iapcct-certificate" src="images/iapcct certificate.jpg" alt="IAPCCT Diploma Certificate" onclick="openModal(this)">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Diploma in NLP</h3>
+                        <p>Awarded by International Association of Professional Coaches, Counselors & Therapists</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for certificate images -->
+    <div id="certificateModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to transform your life? Reach out to schedule a discovery call and take the first step toward your personal and professional growth.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Name</h4>
+                            <p>Sunil PolamReddy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 73306 79417</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>sunilwellnessstudio@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday to Sunday: 6 AM to 9 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://wa.me/917330679417" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/16Ez4Ps6kK/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sunilsunil.p75?utm_source=qr&igsh=MWxyNGV6a3EwcmNtbg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/sunil-kumar-polamreddy-9a10682a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Your Phone</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="professional">Working Professional 1-1 Session</option>
+                                <option value="stress">Stress Management</option>
+                                <option value="anxiety">Anxiety Management</option>
+                                <option value="fear">Fear Management</option>
+                                <option value="goals">Goal Setting & Achievement</option>
+                                <option value="purpose">Living for a Purpose</option>
+                                <option value="nlp">NLP Adv Coaching</option>
+                                <option value="training">NLP Training</option>
+                                <option value="monitoring">NLP Monitoring</option>
+                                <option value="overcoming">Overcoming</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Sunil Wellness Studio</h3>
+                    <p>Empowering individuals to overcome limitations, manage stress, and achieve personal and professional goals through proven wellness techniques and coaching.</p>
+                    <p class="tagline">It's OK to Seek Help</p>
+                    <div class="hours-info">
+                        <p><strong>Working Hours:</strong></p>
+                        <p>Monday to Sunday: 6 AM to 9 PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#nlp">What is NLP</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#certificates">Certificates</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Working Professional 1-1 Session</a></li>
+                        <li><a href="#services">Stress Management</a></li>
+                        <li><a href="#services">Anxiety Management</a></li>
+                        <li><a href="#services">Fear Management</a></li>
+                        <li><a href="#services">Goal Setting & Achievement</a></li>
+                        <li><a href="#services">Living for a Purpose</a></li>
+                        <li><a href="#services">NLP Adv Coaching</a></li>
+                        <li><a href="#services">NLP Training</a></li>
+                        <li><a href="#services">NLP Monitoring</a></li>
+                        <li><a href="#services">Overcoming</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-user"></i> Sunil PolamReddy</li>
+                        <li><i class="fas fa-phone"></i> +91 73306 79417</li>
+                        <li><i class="fas fa-envelope"></i> sunilwellnessstudio@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 6 AM - 9 PM</li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="https://wa.me/917330679417" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/16Ez4Ps6kK/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sunilsunil.p75?utm_source=qr&igsh=MWxyNGV6a3EwcmNtbg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/sunil-kumar-polamreddy-9a10682a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Sunil Wellness Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            let whatsappMessage = `Hi Sunil,%0A%0AI would like to know more about your wellness services.%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService Interested In: ${service}%0AMessage: ${message}`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/917330679417?text=${whatsappMessage}`, '_blank');
+        });
+        
+        // Modal functionality for certificate images
+        function openModal(img) {
+            const modal = document.getElementById('certificateModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+        
+        function closeModal() {
+            document.getElementById('certificateModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('certificateModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
